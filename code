@@ -1,0 +1,18 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+class Solution {
+public:
+    // Function to find the single number in an array where every other number appears twice
+    int singleNumber(vector<int>& nums) {
+        int xori = 0;  // Initialize XOR accumulator to 0
+        
+        // Iterate through the array and XOR each element with the accumulator
+        for(int i = 0; i < nums.size(); i++) {
+            xori = xori ^ nums[i];  // XOR current number with the accumulated result
+        }
+        
+        return xori;  // Return the single number (all duplicates canceled out)
+    }
+};
