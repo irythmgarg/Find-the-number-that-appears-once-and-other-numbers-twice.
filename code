@@ -1,0 +1,37 @@
+Theory
+Problem Statement:
+You are given a non-empty array of integers, nums, where every element appears twice except for one. The task is to find that single number that appears only once.
+
+Approach:
+
+This problem can be efficiently solved using the XOR (exclusive OR) operator.
+XOR has three important properties that make it ideal for this task:
+𝑎⊕𝑎=0
+a⊕a=0: Any number XORed with itself results in 0.
+𝑎⊕0=𝑎
+a⊕0=a:
+Any number XORed with 0 remains unchanged.
+XOR is commutative and associative: The order of operations does not matter.
+Using these properties, if we XOR all the numbers in the array:
+All numbers appearing twice will cancel each other out (resulting in 0).
+The number appearing only once will remain, as 
+0
+⊕
+single number=
+single number
+0⊕single number=single number.
+Algorithm:
+
+Initialize a variable xori to 0. This will store the cumulative XOR of the array elements.
+Traverse the array, XORing each element with xori.
+After the loop, xori will contain the single number.
+Complexity:
+
+Time Complexity: 
+𝑂(n)
+O(n), where 
+
+n is the size of the array. We traverse the array once.
+Space Complexity: 
+𝑂(1)
+O(1), as no extra space is used.
